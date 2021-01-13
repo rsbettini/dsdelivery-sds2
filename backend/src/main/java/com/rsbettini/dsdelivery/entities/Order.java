@@ -101,11 +101,11 @@ public class Order implements Serializable {
 	}
 
 	public Double getTotal() {
+		double total = 0.0;
+		for(Product p : products) {
+			total += p.getPrice();
+		}
 		return total;
-	}
-
-	public void setTotal(Double total) {
-		this.total = total;
 	}
 
 	public Set<Product> getProducts() {
